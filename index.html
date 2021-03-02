@@ -1,50 +1,71 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Arduino-Robotic-Arm</h1>
-        <p class="view"><a href="https://github.com/Toomas633/Arduino-Robotic-Arm">View the Project on GitHub <small>Toomas633</small></a></p>
-        <ul>
-          <li><a href="https://github.com/Toomas633/Arduino-Robotic-Arm/archive/v1.zip">Download<strong>Latest Release</strong></a></li>
-          <li><a href="https://github.com/Toomas633/Arduino-Robotic-Arm">Fork On<strong>GitHub</strong></a></li>
-          <li><a href="https://www.reddit.com/r/arduino/comments/lv9i9n/my_first_ever_arduino_uno_powered_project/?utm_source=share&utm_medium=web2x&context=3">Thread On<strong>Reddit</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>About this project</h1>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" media="screen" type="text/css">
+    <link rel="stylesheet" href="{{ '/assets/css/print.css' | relative_url }}" media="print" type="text/css">
 
-        <p>This is Arduino Uno robotic arm using joystick input. It's my first Arduino project that I have coded completlely by myself from the beginning.<br>
-        This project is still in progress and constantly updated. I found some spare servos a year ago but never got the previous project to work. Now salvaged a broken controller for joysticks and decided to make a new robotic arm. The arm needs some spare metal or weight in the base for extra heft so it won't tip over so easily. Arm is using servos with metal gearboxes for extra sturdiness and better power and performance. Joysticks cahnge the servo position values so they hold position and won't come back when you let go.</p>
-        
-        <h2>Help needed on</h2>
-        
-        <p>If anyone knows a better crapple system or way to make it move than servos, hmu, it doesn't close and open as well as I'd like.<br>
-        <br>Also if anyone knows how I can translate a potentiometer input better than [(value -520)/10] then also let me know, the grapple up down movement is limited currently by it (50-150° about).</p>
-        
-        <h2>Support or Contact</h2>
-       
-        <p>Having trouble? Raise a new <a href="https://github.com/Toomas633/Arduino-Robotic-Arm/issues">Issue</a>, search or ask help from <a href="https://github.com/Toomas633/Arduino-Robotic-Arm/discussions">Discussions</a>. Or contact me on the Reddit thread or via email <a href="mailto:toomas.kirsing@gmail.com">toomas.kirsing@gmail.com</a>and I'll try to help you out.</p>
-        
-        <h2>Links</h2>
-        
-        <ul>
-          <li><a href="https://github.com/Toomas633/Arduino-Robotic-Arm/releases/tag/v1">Latest full release</a></li>
-          <li><a href="https://github.com/Toomas633/Arduino-Robotic-Arm/wiki">Wiki</a></li>
-          <li><a href="https://github.com/Toomas633/Arduino-Robotic-Arm/wiki/Image">Image</a></li>
-        </ul>
-        
-        <form action="https://www.paypal.com/donate" method="post" target="_top">
-        <input type="hidden" name="hosted_button_id" value="VDQA7QDPEQJVC" />
-        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-        <img alt="" border="0" src="https://www.paypal.com/en_EE/i/scr/pixel.gif" width="1" height="1" /></form>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+{% seo %}
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <a href="{{ '/' | absolute_url }}">
+          <h1>{{ site.title | default: site.github.repository_name }}</h1>
+        </a>
+        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+        {% if site.github.is_project_page %}
+          <a href="{{ site.github.repository_url }}" class="button"><small>View project on</small> GitHub</a>
+        {% endif %}
+        {% if site.github.is_user_page %}
+          <a href="{{ site.github.owner_url }}" class="button"><small>Follow me on</small> GitHub</a>
+        {% endif %}
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          {{ content }}
+        </section>
+
+        <aside id="sidebar">
+          {% if site.show_downloads %}
+            <a href="{{ site.github.zip_url }}" class="button">
+              <small>Download</small>
+              .zip file
+            </a>
+            <a href="{{ site.github.tar_url }}" class="button">
+              <small>Download</small>
+              .tar.gz file
+            </a>
+          {% endif %}
+
+          {% if site.github.is_project_page %}
+            <p class="repo-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</p>
+          {% endif %}
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+    {% if site.google_analytics %}
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', '{{ site.google_analytics }}', 'auto');
+        ga('send', 'pageview');
+      </script>
+    {% endif %}
+  </body>
+</html>

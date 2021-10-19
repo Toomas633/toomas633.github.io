@@ -1537,6 +1537,9 @@ a {
 .cid-sMgQ1xZcGE .panel-text P {
   text-align: left;
 }
+.cid-sMgQ1xZcGE P {
+  color: #ffffff;
+}
 .cid-s48P1Icc8J {
   padding-top: 3rem;
   padding-bottom: 0rem;
@@ -4908,8 +4911,8 @@ a {
   }
 }
 .cid-sMhn6oJDkN {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   background-color: #353535;
 }
 .cid-sMhn6oJDkN .timeline-element {
